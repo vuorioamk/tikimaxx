@@ -1,0 +1,24 @@
+TIKIMAXX WEBSITE — GITHUB PAGES SETUP
+
+These are informational website files. Do not upload your TikiMaxx Xcode project, Fineli database, Oura credentials, or any personal health records.
+
+1. Before publishing, open privacy.html and terms.html with a text editor and replace YOUR_CONTACT_EMAIL with a reachable email address you are comfortable showing publicly.
+2. Sign in to github.com (make a free account if needed).
+3. Create a new PUBLIC repository named tikimaxx-site. (If you already published a salus-site for your Oura application, you may instead replace the existing repository files, preserving its URLs.)
+4. At the repository root, use Add file -> Upload files. Upload these 5 files (not the ZIP or the folder itself): index.html, privacy.html, terms.html, style.css, tikimaxx-mark.svg.
+5. Settings -> Pages -> Build and deployment -> Source: Deploy from a branch -> Branch: main, Folder: /(root) -> Save.
+6. Wait for Pages to publish; open and verify all three links before entering them at Oura:
+   https://YOURUSERNAME.github.io/tikimaxx-site/
+   https://YOURUSERNAME.github.io/tikimaxx-site/privacy.html
+   https://YOURUSERNAME.github.io/tikimaxx-site/terms.html
+
+Oura developer registration:
+   Display name: TikiMaxx Personal
+   Description: Personal-use iPhone nutrition and fitness dashboard that combines Oura insights and Apple Health activity data.
+   Contact email: your reachable contact email
+   Website, Privacy Policy, Terms: the published links listed above.
+   Redirect URI: http://127.0.0.1:1455/oura/callback
+   This URI is the exact value in TikiMaxx 4.0 OuraClient.swift. It is not the public website URL.
+   Suggested scopes: Daily and Workout (those are requested by the current app code; any additional scopes should be justified and verified).
+
+Keep any Client Secret private. Never commit it to GitHub. TikiMaxx currently requests the Client ID from you for the local OAuth flow, and the connection still needs iPhone testing.
